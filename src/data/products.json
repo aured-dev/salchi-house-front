@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "nombre": "Clásica",
+    "descripcion": "Papas criolla, salchicha, salsas , salsa de la casa",
+    "imagen": "/productos/s_clasica.png",
+    "precio": 8000,
+    "categoria": "salchipapas"
+  },
+  {
+    "id": 2,
+    "nombre": "Con queso",
+    "descripcion": "Papas criolla, salchicha, queso, salsas , salsa de la casa",
+    "imagen": "/productos/s_con_queso.png",
+    "precio": 9000,
+    "categoria": "salchipapas"
+  },
+    {
+    "id": 3,
+    "nombre": "Especial",
+    "descripcion": "Papas criolla, salchicha, carne o pollo, queso , salsa de la casa",
+    "imagen": "/productos/s_especial.png",
+    "precio": 12000,
+    "categoria": "salchipapas"
+  },
+    {
+    "id": 4,
+    "nombre": "Mixta",
+    "descripcion": "Papas criolla, salchicha, carne, pollo, queso, salsas , salsa de la casa",
+    "imagen": "/productos/s_mixta.png",
+    "precio": 16000,
+    "categoria": "salchipapas"
+  },
+  {
+    "id": 5,
+    "nombre": "Familiar",
+    "descripcion": "Papas criolla, salchicha, carne, pollo, queso, nachos, salsas , salsa de la casa",
+    "imagen": "/productos/s_familiar.png",
+    "precio": 35000,
+    "categoria": "salchipapas"
+  },
+  {
+    "id": 6,
+    "nombre": "Clásica",
+    "descripcion": "Carne artesanal, queso, jamon, Cebolla cramelizada, lechuga, tomate y salsa de la casa.",
+    "imagen": "/productos/h_clasica.png",
+    "precio": 15000,
+    "categoria": "hamburguesas"
+  },
+  {
+    "id": 7,
+    "nombre": "Especial",
+    "descripcion": "Carne artesanal, queso, tocinate, jamon, Cebolla cramelizada, lechuga, tomate y salsa de la casa.",
+    "imagen": "/productos/h_especial.png",
+    "precio": 22000,
+    "categoria": "hamburguesas"
+  },
+  {
+    "id": 8,
+    "nombre": "Mixta",
+    "descripcion": "Carne artesanal, pollo desmechado, queso, jamon, Cebolla cramelizada, lechuga, tomate y salsa de la casa.",
+    "imagen": "/productos/h_mixta.png",
+    "precio": 25000,
+    "categoria": "hamburguesas"
+  },
+  {
+    "id": 9,
+    "nombre": "Sencillo",
+    "descripcion": "Salchicha americana, queso, jamon, ripio y salsa de la casa.",
+    "imagen": "/productos/p_sencillo.png",
+    "precio": 16000,
+    "categoria": "perros"
+  }
+  ,
+  {
+    "id": 10,
+    "nombre": "Especial",
+    "descripcion": "Salchicha americana, queso, jamón, tocineta o pollo, salsa de la casa.",
+    "imagen": "/productos/p_especial.png",
+    "precio": 22000,
+    "categoria": "perros"
+  }
+  ,
+  {
+    "id": 11,
+    "nombre": "Dorilocos",
+    "descripcion": "Doritos, pollo o carne, queso cheddar, pico de gallo, jalapeños, lechuga, salsa",
+    "imagen": "/productos/p_doriloco.png",
+    "precio": 17000,
+    "categoria": "perros"
+  }
+  ,
+  {
+    "id": 12,
+    "nombre": "Carne ahumada",
+    "descripcion": "Carne, papa criolla o yuca, guacamole, salsa de la casa.",
+    "imagen": "/productos/pl_carne_ahumada.png",
+    "precio": 18000,
+    "categoria": "platos"
+  },
+  {
+    "id": 13,
+    "nombre": "Costilla ahumada",
+    "descripcion": "Costilla, papa criolla o yuca, guacamole, salsa de la casa.",
+    "imagen": "/productos/pl_costilla_ahumada.png",
+    "precio": 18000,
+    "categoria": "platos"
+  }
+]
+
