@@ -13,6 +13,7 @@ function cn(...inputs) {
 // --- CONSTANTS ---
 const ADMIN_PASSWORD = "admin123";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001/api";
+console.log("DEBUG: La API_URL cargada es:", API_URL);
 
 const CATEGORIES = [
   { id: 'todos', label: 'Todos' },
@@ -31,6 +32,7 @@ const UserView = () => {
   const [sauces, setSauces] = useState([]);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [isSending, setIsSending] = useState(false);
 
   const SAUCE_OPTIONS = ["Ajo de la casa", "Rosada", "Piña", "Tomate"];
@@ -62,7 +64,7 @@ const UserView = () => {
     setSelectedProduct(null);
     setQuantity(1);
     setSauces([]);
-    setShowCart(true);
+    // setShowCart(true); // Removido para que no se abra automáticamente
   };
 
   const removeFromCart = (cartId) => {
@@ -71,11 +73,16 @@ const UserView = () => {
 
   const finishOrder = async () => {
     if (cart.length === 0 || isSending) return;
+    if (!phoneNumber) {
+      alert("Por favor ingresa tu número de teléfono para contactarte.");
+      return;
+    }
 
     setIsSending(true);
     try {
       const newOrder = {
         items: cart,
+        phone: phoneNumber,
         total: cart.reduce((sum, item) => sum + (item.precio * item.quantity), 0)
       };
       
@@ -177,15 +184,29 @@ const UserView = () => {
 
             {cart.length > 0 && (
               <div className="p-6 border-t border-gray-800 bg-black/20">
+                <div className="mb-6">
+                  <label className="block text-xs font-black uppercase text-gray-500 mb-2 tracking-widest">TU TELÉFONO (PARA CONTACTARTE)</label>
+                  <input 
+                    type="tel" 
+                    placeholder="Escribe tu número aquí..."
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="w-full p-4 bg-gray-800 border-2 border-gray-700 rounded-xl focus:border-yellow-500 outline-none text-white font-bold"
+                  />
+                </div>
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-gray-500 font-black uppercase italic">TOTAL A PAGAR:</span>
                   <span className="text-3xl font-black text-yellow-500 tracking-tighter">${cartTotal.toLocaleString()}</span>
                 </div>
                 <button 
                   onClick={finishOrder}
-                  className="w-full bg-red-600 text-white py-5 rounded-2xl font-black text-xl hover:bg-red-700 transition-all transform active:scale-95 uppercase italic shadow-lg shadow-red-900/20"
+                  disabled={isSending}
+                  className={cn(
+                    "w-full py-5 rounded-2xl font-black text-xl transition-all transform active:scale-95 uppercase italic shadow-lg shadow-red-900/20",
+                    isSending ? "bg-gray-700 cursor-not-allowed" : "bg-red-600 hover:bg-red-700 text-white"
+                  )}
                 >
-                  FINALIZAR PEDIDO
+                  {isSending ? "ENVIANDO..." : "FINALIZAR PEDIDO"}
                 </button>
               </div>
             )}
@@ -494,7 +515,11 @@ const AdminView = () => {
               <div className="flex justify-between items-start mb-4 border-b border-gray-800 pb-4">
                 <div>
                   <h3 className="font-black text-white text-lg uppercase italic tracking-tighter">ORDEN #{order.id.toString().slice(-4)}</h3>
-                  <p className="text-[10px] font-bold text-gray-500">
+                  <div className="flex items-center gap-2 text-yellow-500 font-black text-xs mt-1">
+                    <Phone size={12} />
+                    <span>{order.phone || 'SIN TELÉFONO'}</span>
+                  </div>
+                  <p className="text-[10px] font-bold text-gray-500 mt-1">
                     {new Date(order.id).toLocaleTimeString()}
                   </p>
                 </div>
