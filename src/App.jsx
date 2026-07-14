@@ -116,23 +116,28 @@ const UserView = () => {
           <img src="/logo.png" alt="Logo" className="h-16 md:h-20 w-auto object-contain" />
         </Link>
         <div className="flex items-center gap-6">
-          <button 
-            onClick={() => setShowCart(true)}
-            className="relative p-2 text-yellow-500 hover:text-yellow-400 transition-colors"
-          >
-            <ShoppingCart size={32} />
-            {cart.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center animate-bounce">
-                {cart.length}
-              </span>
-            )}
-          </button>
           <Link to="/admin" className="text-gray-500 hover:text-white flex items-center gap-2 font-bold text-sm">
             <LayoutDashboard size={20} />
             <span>ADMIN</span>
           </Link>
         </div>
       </header>
+
+      {/* Floating Cart Button */}
+      <button 
+        onClick={() => setShowCart(true)}
+        className="fixed top-20 right-6 z-50 bg-red-600 text-white p-4 rounded-full shadow-2xl shadow-red-900/40 hover:bg-red-700 hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
+      >
+        <ShoppingCart size={32} />
+        {cart.length > 0 && (
+          <span className="absolute -top-1 -right-1 bg-yellow-500 text-black text-xs font-black w-6 h-6 rounded-full flex items-center justify-center animate-bounce border-2 border-black">
+            {cart.length}
+          </span>
+        )}
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-black uppercase text-sm whitespace-nowrap italic">
+          Ver Pedido
+        </span>
+      </button>
 
       {/* Cart Sidebar/Modal */}
       {showCart && (
