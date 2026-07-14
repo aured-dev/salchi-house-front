@@ -289,15 +289,16 @@ const UserView = () => {
         <div className="max-w-md mx-auto bg-gray-900 p-8 rounded-2xl shadow-2xl border-2 border-yellow-500 text-center animate-in fade-in zoom-in duration-300">
           <CheckCircle2 className="mx-auto text-yellow-500 mb-4" size={64} />
           <h2 className="text-2xl font-bold mb-4 text-white uppercase italic">¡Pedido Recibido!</h2>
-          <p className="text-gray-400 mb-6">Para confirmar tu pedido, comunícate al número 12345:</p>
+          <p className="text-gray-400 mb-6">Para confirmar tu pedido, comunícate al número 3127802437 o al 3206533409:</p>
           <div className="space-y-4">
-            <a href="tel:12345" className="flex items-center justify-center gap-3 bg-red-600 text-white py-4 rounded-xl font-black hover:bg-red-700 transition-all transform hover:scale-105">
-              <Phone size={20} />
-              LLAMAR AL 12345
-            </a>
-            <a href="https://wa.me/12345" className="flex items-center justify-center gap-3 bg-yellow-500 text-black py-4 rounded-xl font-black hover:bg-yellow-600 transition-all transform hover:scale-105">
+            
+            <a href="https://wa.me/+573127802437" className="flex items-center justify-center gap-3 bg-yellow-500 text-black py-4 rounded-xl font-black hover:bg-yellow-600 transition-all transform hover:scale-105">
               <MessageSquare size={20} />
-              WHATSAPP 12345
+              WHATSAPP 3127802437
+            </a>
+            <a href="https://wa.me/+573206533409" className="flex items-center justify-center gap-3 bg-yellow-500 text-black py-4 rounded-xl font-black hover:bg-yellow-600 transition-all transform hover:scale-105">
+              <MessageSquare size={20} />
+              WHATSAPP 3206533409
             </a>
           </div>
           <button 
